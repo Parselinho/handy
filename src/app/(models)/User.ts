@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
+// import bcrypt from "bcryptjs";
 import Joi from "joi";
 const { Schema } = mongoose;
 
-const UserSchema = new Schema({
+export interface IUser {
+  firstName: string;
+  lastName: string;
+  password: string;
+  email: string;
+}
+
+const UserSchema = new Schema<IUser>({
   firstName: String,
   lastName: String,
   password: String,
@@ -13,7 +20,8 @@ const UserSchema = new Schema({
   },
 });
 
-export const User = mongoose.models.User || mongoose.model("User", UserSchema);
+export const User =
+  mongoose.models.User || mongoose.model<IUser>("User", UserSchema);
 
 export const userValidation = Joi.object({
   firstName: Joi.string().min(2).max(15).required(),
