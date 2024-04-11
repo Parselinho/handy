@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 
 const debug = getDebugger("async-error");
 
-const asyncHandler = (cb) => async (req) => {
+const asyncHandler = (cb) => async (req, res) => {
   try {
-    await cb(req);
+    return await cb(req, res);
   } catch (error) {
     const statusCode = error.statusCode || 500;
     const message = error.message || "Something went wrong";

@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 import { getDebugger } from "@/lib/debugger";
 const debug = getDebugger("route");
 
-export const POST = asyncHandler(async (req: Request) => {
+export const POST = asyncHandler(async (req: Request, res: NextResponse) => {
   await connectDB(process.env.MONGODB_URI);
   const data = await req.json();
   const { email, firstName, lastName, password } = data;
