@@ -4,11 +4,7 @@ import { getDebugger } from "./debugger";
 
 const debug = getDebugger("actions");
 
-// function isInvalidText(text: any) {
-//   return !text || text.trim() == "";
-// }
-
-export const registerNewUser = async (formData: FormData) => {
+export const registerNewUser = async (prevState: any, formData: FormData) => {
   const user = {
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
@@ -16,22 +12,10 @@ export const registerNewUser = async (formData: FormData) => {
     confirmPassword: formData.get("confirmPassword") as string,
     email: formData.get("email") as string,
   };
-  //   if (
-  //     isInvalidText(user.firstName) ||
-  //     isInvalidText(user.lastName) ||
-  //     isInvalidText(user.password) ||
-  //     isInvalidText(user.confirmPassword) ||
-  //     isInvalidText(user.email)
-  //   ) {
-  //     return {
-  //       message: "Invalid Input",
-  //     };
-  //   }
 
   try {
     await customFetch.post("/api/auth/sign-up", user);
-  } catch (error) {
-    debug(error);
-    console.error(error);
+  } catch (error: any) {
+    return { message: error.response.data.error };
   }
 };

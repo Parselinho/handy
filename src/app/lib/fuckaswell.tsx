@@ -9,15 +9,12 @@ import { useFormState } from "react-dom";
 
 const debug = getDebugger("sign-up-form");
 
-const initialState = {
-  message: null,
-};
-
 const Page = () => {
-  const [state, formAction] = useFormState(registerNewUser, initialState);
+  //   const [state, formAction] = useFormState(registerNewUser, { message: null });
+
   return (
     <main>
-      <form action={formAction}>
+      <form action={registerNewUser}>
         <FormInput
           name="firstName"
           label="First Name:"
@@ -34,13 +31,13 @@ const Page = () => {
           name="password"
           label="Password:"
           type="password"
-          placeholder="******"
+          placeholder="**"
         />
         <FormInput
           name="confirmPassword"
           label="Confirm Password:"
           type="password"
-          placeholder="******"
+          placeholder="**"
         />
         <FormInput
           name="email"
@@ -48,8 +45,7 @@ const Page = () => {
           type="email"
           placeholder="Your Email Here"
         />
-        {state?.message && toast.error(state.message)}
-
+        {/* {state?.message && toast.error(state.message)} */}
         <SubmitBtn text="Sign Up" />
       </form>
     </main>
