@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-// import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs";
 import Joi from "joi";
 const { Schema } = mongoose;
 
@@ -19,6 +19,18 @@ const UserSchema = new Schema<IUser>({
     unique: true,
   },
 });
+
+// hash password only when user creation or when updating password
+UserSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
+  this.password = await bcrypt.hash(this.password, 10);
+});
+
+// compare password
+UserSchema.methods.comparePassword = async function (inputPassword: string) {
+  const isMatch = await bcrypt.compare(inputPassword, this.password);
+  return isMatch;
+};
 
 export const User =
   mongoose.models.User || mongoose.model<IUser>("User", UserSchema);

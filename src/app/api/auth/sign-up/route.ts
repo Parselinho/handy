@@ -1,7 +1,7 @@
-import { connectDB } from "../../lib/mongoose";
-import { User, userValidation, loginValidation } from "../../(models)/User";
-import { BadRequestError } from "../../lib/ErrorHandler";
-import asyncHandler from "../../lib/asyncHandler";
+import { connectDB } from "../../../lib/mongoose";
+import { User, userValidation, loginValidation } from "../../../(models)/User";
+import { BadRequestError } from "../../../lib/ErrorHandler";
+import asyncHandler from "../../../lib/asyncHandler";
 import { NextRequest, NextResponse } from "next/server";
 import { getDebugger } from "@/app/lib/debugger";
 
@@ -35,12 +35,4 @@ export const POST = asyncHandler(async (req: NextRequest) => {
     },
     { status: 201 }
   );
-  // return new Response(
-  //   JSON.stringify({
-  //     message: `scss`,
-  //     success: true,
-  //     user,
-  //     status: 201,
-  //   })
-  // );
 });

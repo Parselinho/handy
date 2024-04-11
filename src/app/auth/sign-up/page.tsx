@@ -1,29 +1,46 @@
 "use client";
 import { getDebugger } from "@/app/lib/debugger";
 import { saveUserAction } from "@/app/lib/actions";
-import { customFetch } from "@/app/lib/customFetch";
+import FormInput from "../../(components)/forms/FormInput";
+import SubmitBtn from "../../(components)/forms/SubmitBtn";
 
 const debug = getDebugger("sign-up-form");
 
 const Page = () => {
-  //   const onSubmit = async (e: any) => {
-  //     e.preventDefault();
-  //   };
-
   return (
     <main>
       <form action={saveUserAction}>
-        <label htmlFor="firstName">First Name:</label>
-        <input type="text" name="firstName" id="firstName" />
-        <label htmlFor="lastName">Last Name:</label>
-        <input type="text" name="lastName" id="lastName" />
-        <label htmlFor="password">Password:</label>
-        <input type="password" name="password" id="password" />
-        <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" />
-        <label htmlFor="email">Email:</label>
-        <input type="email" name="email" id="email" />
-        <button type="submit">Submit</button>
+        <FormInput
+          name="firstName"
+          label="First Name:"
+          type="text"
+          placeholder="Your First Name"
+        />
+        <FormInput
+          name="lastName"
+          label="Last Name:"
+          type="text"
+          placeholder="Your Last Name"
+        />
+        <FormInput
+          name="password"
+          label="Password:"
+          type="password"
+          placeholder="**"
+        />
+        <FormInput
+          name="confirmPassword"
+          label="Confirm Password:"
+          type="password"
+          placeholder="**"
+        />
+        <FormInput
+          name="email"
+          label="Email:"
+          type="email"
+          placeholder="Your Email Here"
+        />
+        <SubmitBtn text="Sign Up" />
       </form>
     </main>
   );
