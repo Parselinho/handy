@@ -14,7 +14,8 @@ export const registerNewUser = async (prevState: any, formData: FormData) => {
   };
 
   try {
-    await customFetch.post("/api/auth/sign-up", user);
+    const { data } = await customFetch.post("/api/auth/sign-up", user);
+    return data;
   } catch (error: any) {
     return { message: error.response.data.error };
   }

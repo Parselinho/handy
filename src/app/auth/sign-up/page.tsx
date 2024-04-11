@@ -4,7 +4,6 @@ import { registerNewUser } from "@/app/lib/actions";
 import FormInput from "../../(components)/forms/FormInput";
 import SubmitBtn from "../../(components)/forms/SubmitBtn";
 import { toast } from "react-toastify";
-import { useState } from "react";
 import { useFormState } from "react-dom";
 
 const debug = getDebugger("sign-up-form");
@@ -49,7 +48,6 @@ const Page = () => {
           placeholder="Your Email Here"
         />
         {state?.message && toast.error(state.message)}
-
         <SubmitBtn text="Sign Up" />
       </form>
     </main>
