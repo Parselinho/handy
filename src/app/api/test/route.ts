@@ -2,11 +2,12 @@ import { connectDB } from "../../lib/mongoose";
 import { User, userValidation, loginValidation } from "../../(models)/User";
 import { BadRequestError } from "../../lib/ErrorHandler";
 import asyncHandler from "../../lib/asyncHandler";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getDebugger } from "@/app/lib/debugger";
+
 const debug = getDebugger("route");
 
-export const POST = asyncHandler(async (req: Request, res: NextResponse) => {
+export const POST = asyncHandler(async (req: NextRequest) => {
   await connectDB(process.env.MONGODB_URI);
   const data = await req.json();
   const { email, firstName, lastName, password } = data;
@@ -34,4 +35,12 @@ export const POST = asyncHandler(async (req: Request, res: NextResponse) => {
     },
     { status: 201 }
   );
+  // return new Response(
+  //   JSON.stringify({
+  //     message: `scss`,
+  //     success: true,
+  //     user,
+  //     status: 201,
+  //   })
+  // );
 });

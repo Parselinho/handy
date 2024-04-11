@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/(models)/User.js"
+    "src/app/(models)/User.js",
+    "src/app/lib/asyncHandler.js"
   ],
   "exclude": ["node_modules"]
 }
