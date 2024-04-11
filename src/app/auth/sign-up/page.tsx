@@ -1,17 +1,18 @@
 "use client";
 import { getDebugger } from "@/app/lib/debugger";
 import { saveUserAction } from "@/app/lib/actions";
+import { customFetch } from "@/app/lib/customFetch";
 
 const debug = getDebugger("sign-up-form");
 
-const page = () => {
-  const onSubmit = (e: any) => {
-    e.preventDefault();
-  };
+const Page = () => {
+  //   const onSubmit = async (e: any) => {
+  //     e.preventDefault();
+  //   };
 
   return (
     <main>
-      <form action={saveUserAction} onSubmit={onSubmit}>
+      <form action={saveUserAction}>
         <label htmlFor="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName" />
         <label htmlFor="lastName">Last Name:</label>
@@ -27,4 +28,4 @@ const page = () => {
     </main>
   );
 };
-export default page;
+export default Page;

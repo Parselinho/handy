@@ -1,8 +1,7 @@
 "use server";
-
+import { customFetch } from "./customFetch";
 import { getDebugger } from "./debugger";
 const debug = getDebugger("actions");
-import { IUser } from "../(models)/User";
 
 export const saveUserAction = async (formData: FormData) => {
   debug(formData);
@@ -10,7 +9,12 @@ export const saveUserAction = async (formData: FormData) => {
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
     password: formData.get("password") as string,
+    confirmPassword: formData.get("confirmPassword") as string,
     email: formData.get("email") as string,
   };
-  debug("user", user);
+  try {
+    await customFetch.post("/api/test", user);
+  } catch (error) {
+    console.log(error);
+  }
 };
