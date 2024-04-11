@@ -15,11 +15,13 @@ const asyncHandler =
     } catch (error: any) {
       const statusCode = error.statusCode || 500;
       const message = error.message || "Something went wrong";
+      const { data } = message;
+      debug(data);
       debug(`Error ${statusCode}: ${message}`);
       return NextResponse.json(
-        {
-          error: message,
-        },
+        // {
+        //   error: message,
+        // },
         { status: statusCode }
       );
       //   return new Response(

@@ -1,30 +1,20 @@
-"use client"; // Error components must be Client Components
+"use client";
 
-import { useEffect } from "react";
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
+const error = ({ error }: { error: any }) => {
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
-    </div>
+    <main>
+      <h1>Something Wrong...</h1>
+      <p>{error.message}</p>
+    </main>
   );
-}
+};
+export default error;
+
+// export default function ErrorBoundary({ error }: { error: any }) {
+//   return (
+//     <main>
+//       <h1>Something Went Wrong...</h1>
+//       <p>{error.message}</p>
+//     </main>
+//   );
+// }

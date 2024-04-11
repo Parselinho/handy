@@ -3,10 +3,13 @@ import { getDebugger } from "@/app/lib/debugger";
 import { saveUserAction } from "@/app/lib/actions";
 import FormInput from "../../(components)/forms/FormInput";
 import SubmitBtn from "../../(components)/forms/SubmitBtn";
+// import { useFormState } from "react-dom";
 
 const debug = getDebugger("sign-up-form");
 
 const Page = () => {
+  //   const [state, formAction] = useFormState(saveUserAction, { message: null });
+
   return (
     <main>
       <form action={saveUserAction}>
