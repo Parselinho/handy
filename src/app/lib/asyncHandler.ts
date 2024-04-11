@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { getDebugger } from "./debugger";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -15,13 +14,11 @@ const asyncHandler =
     } catch (error: any) {
       const statusCode = error.statusCode || 500;
       const message = error.message || "Something went wrong";
-      const { data } = message;
-      debug(data);
-      debug(`Error ${statusCode}: ${message}`);
+      //   debug(`Error ${statusCode}: ${message}`);
       return NextResponse.json(
-        // {
-        //   error: message,
-        // },
+        {
+          message,
+        },
         { status: statusCode }
       );
       //   return new Response(

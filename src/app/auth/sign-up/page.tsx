@@ -1,18 +1,19 @@
 "use client";
 import { getDebugger } from "@/app/lib/debugger";
-import { saveUserAction } from "@/app/lib/actions";
+import { registerNewUser } from "@/app/lib/actions";
 import FormInput from "../../(components)/forms/FormInput";
 import SubmitBtn from "../../(components)/forms/SubmitBtn";
-// import { useFormState } from "react-dom";
+import { useFormState } from "react-dom";
+import { toast } from "react-toastify";
 
 const debug = getDebugger("sign-up-form");
 
 const Page = () => {
-  //   const [state, formAction] = useFormState(saveUserAction, { message: null });
+  //   const [state, formAction] = useFormState(registerNewUser, { message: "" });
 
   return (
     <main>
-      <form action={saveUserAction}>
+      <form action={registerNewUser}>
         <FormInput
           name="firstName"
           label="First Name:"
@@ -43,6 +44,7 @@ const Page = () => {
           type="email"
           placeholder="Your Email Here"
         />
+        {/* {state?.message && toast.error(state.message)} */}
         <SubmitBtn text="Sign Up" />
       </form>
     </main>

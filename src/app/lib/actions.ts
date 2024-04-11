@@ -1,15 +1,14 @@
 "use server";
-import { redirect } from "next/navigation";
 import { customFetch } from "./customFetch";
 import { getDebugger } from "./debugger";
-import { BadRequestError } from "./ErrorHandler";
+
 const debug = getDebugger("actions");
 
 // function isInvalidText(text: any) {
 //   return !text || text.trim() == "";
 // }
 
-export const saveUserAction = async (formData: FormData) => {
+export const registerNewUser = async (formData: FormData) => {
   const user = {
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
@@ -32,6 +31,7 @@ export const saveUserAction = async (formData: FormData) => {
   try {
     await customFetch.post("/api/auth/sign-up", user);
   } catch (error) {
+    debug(error);
     console.error(error);
   }
 };

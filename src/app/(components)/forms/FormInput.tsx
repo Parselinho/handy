@@ -1,4 +1,14 @@
-const FormInput = ({ label, name, type, placeholder }) => {
+const FormInput = ({
+  label,
+  name,
+  type,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type: string;
+  placeholder: string;
+}) => {
   return (
     <div className="form-control">
       <label htmlFor={name}>

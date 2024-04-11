@@ -5,7 +5,7 @@ import { getDebugger } from "@/app/lib/debugger";
 
 const debug = getDebugger("submitBtn-comp");
 
-const SubmitBtn = ({ text }) => {
+const SubmitBtn = ({ text }: { text: string }) => {
   const { pending } = useFormStatus();
 
   return (
