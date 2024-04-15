@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { getDebugger } from "@/app/lib/debugger";
+import { getDebugger } from "@/lib/debugger";
 
 const debug = getDebugger("submitBtn-comp");
 

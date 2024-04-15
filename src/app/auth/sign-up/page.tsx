@@ -1,6 +1,6 @@
 "use client";
-import { getDebugger } from "@/app/lib/debugger";
-import { registerNewUser } from "@/app/lib/actions";
+import { getDebugger } from "@/lib/debugger";
+import { registerNewUser } from "@/lib/actions";
 import FormInput from "@/components/forms/FormInput";
 import SubmitBtn from "@/components/forms/SubmitBtn";
 import toast from "react-hot-toast";

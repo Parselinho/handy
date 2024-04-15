@@ -1,9 +1,9 @@
-import { connectDB } from "../../../lib/mongoose";
+import { connectDB } from "../../../../lib/mongoose";
 import { User, userValidation, loginValidation } from "../../../../models/User";
-import { BadRequestError } from "../../../lib/ErrorHandler";
-import asyncHandler from "../../../lib/asyncHandler";
+import { BadRequestError } from "../../../../lib/ErrorHandler";
+import asyncHandler from "../../../../lib/asyncHandler";
 import { NextRequest, NextResponse } from "next/server";
-import { getDebugger } from "@/app/lib/debugger";
+import { getDebugger } from "@/lib/debugger";
 
 const debug = getDebugger("route");
 
