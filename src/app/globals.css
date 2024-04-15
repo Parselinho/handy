@@ -30,3 +30,60 @@ body {
   }
 }
 /* end of loading page style! */
+
+/* sign up card */
+.cardForSignUp {
+  background-color: rgba(104, 145, 131, 0.705);
+  border-radius: 10%;
+  padding: 2em;
+}
+/* end of sign up card */
+
+/* Image Picker Component:
+/* input for image file in sign up form */
+.picker .inputHidden {
+  display: none;
+}
+
+.picker .button {
+  border: 0;
+  padding: 0.5rem 1.5rem;
+  background: #a4abb9;
+  border-radius: 2px;
+  cursor: pointer;
+  font: inherit;
+}
+/* end of input image file */
+.controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.picker .button:hover,
+.picker .button:focus {
+  background: #b3b9c6;
+}
+
+.preview {
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid #a4abb9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #a4abb9;
+  position: relative;
+}
+
+.preview p {
+  margin: 0;
+  padding: 1rem;
+}
+
+.preview img {
+  object-fit: cover;
+}
+/* End Of Image Picker Component! */

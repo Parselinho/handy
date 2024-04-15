@@ -6,6 +6,8 @@ import SubmitBtn from "@/components/forms/SubmitBtn";
 import toast from "react-hot-toast";
 import { useFormState } from "react-dom";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import ImageFile from "@/components/ImageFile";
 
 const debug = getDebugger("sign-up-form");
 
@@ -45,51 +47,55 @@ const Page = () => {
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <form action={formAction} className="max-w-md">
-            <FormInput
-              name="firstName"
-              label="First Name:"
-              type="text"
-              placeholder="Your First Name"
-              required
-            />
-            <FormInput
-              name="lastName"
-              label="Last Name:"
-              type="text"
-              placeholder="Your Last Name"
-              required
-            />
-            <FormInput
-              name="password"
-              label="Password:"
-              type="password"
-              placeholder="******"
-              required
-            />
-            <FormInput
-              name="confirmPassword"
-              label="Confirm Password:"
-              type="password"
-              placeholder="******"
-              required
-            />
-            <FormInput
-              name="email"
-              label="Email:"
-              type="email"
-              placeholder="Your Email Here"
-              required
-            />
-            <SubmitBtn text="Sign Up" />
-            <p aria-live="polite" className="sr-only" role="status">
-              {state?.message}
-            </p>
-          </form>
+        <div className="hero-content text-center text-neutral-content cardForSignUp">
+          <div className="max-w-md">
+            <form action={formAction}>
+              <FormInput
+                name="firstName"
+                label="First Name:"
+                type="text"
+                placeholder="Your First Name"
+                required
+              />
+              <FormInput
+                name="lastName"
+                label="Last Name:"
+                type="text"
+                placeholder="Your Last Name"
+                required
+              />
+              <FormInput
+                name="password"
+                label="Password:"
+                type="password"
+                placeholder="******"
+                required
+              />
+              <FormInput
+                name="confirmPassword"
+                label="Confirm Password:"
+                type="password"
+                placeholder="******"
+                required
+              />
+              <FormInput
+                name="email"
+                label="Email:"
+                type="email"
+                placeholder="Your Email Here"
+                required
+              />
+              <ImageFile label="" name="" />
+              <SubmitBtn text="Sign Up" />
+              <p aria-live="polite" className="sr-only" role="status">
+                {state?.message}
+              </p>
+            </form>
+            <p>Already signed up?</p>
+            <Link href="auth/login">Login</Link>
+          </div>
         </div>
       </div>
-      ;
     </main>
   );
 };
