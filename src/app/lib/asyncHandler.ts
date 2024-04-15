@@ -14,7 +14,6 @@ const asyncHandler =
     } catch (error: any) {
       const statusCode = error.statusCode || 500;
       const message = error.message || "Something went wrong";
-      //   debug(`Error ${statusCode}: ${message}`);
       return NextResponse.json(
         {
           error: message,

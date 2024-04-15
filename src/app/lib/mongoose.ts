@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import { getDebugger } from "./debugger";
 
 const debug = getDebugger("db");
-// const debug = require("debug")("app:db");
 
 export async function connectDB(url: string | undefined): Promise<void> {
   if (!url) {
