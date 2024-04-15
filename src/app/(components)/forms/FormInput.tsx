@@ -3,11 +3,13 @@ const FormInput = ({
   name,
   type,
   placeholder,
+  required = false,
 }: {
   label: string;
   name: string;
   type: string;
   placeholder: string;
+  required?: boolean;
 }) => {
   return (
     <div className="form-control">
@@ -19,6 +21,7 @@ const FormInput = ({
         name={name}
         placeholder={placeholder}
         className="input input-bordered"
+        required={required}
       />
     </div>
   );

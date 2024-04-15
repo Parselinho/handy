@@ -8,6 +8,8 @@ export interface IUser {
   lastName: string;
   password: string;
   email: string;
+  role: string;
+  image: string;
 }
 
 const UserSchema = new Schema<IUser>({
@@ -17,6 +19,14 @@ const UserSchema = new Schema<IUser>({
   email: {
     type: String,
     unique: true,
+  },
+  role: {
+    type: String,
+    default: "user",
+  },
+  image: {
+    type: String,
+    default: "",
   },
 });
 

@@ -9,7 +9,7 @@ const SubmitBtn = ({ text }: { text: string }) => {
   const { pending } = useFormStatus();
 
   return (
-    <button type="submit" className="btn btn-primary" disabled={pending}>
+    <button type="submit" className="btn btn-primary" aria-disabled={pending}>
       {pending ? "Submitting..." : text}
     </button>
   );
