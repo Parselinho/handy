@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 const Hero = () => {
   return (
     <div className="hero bg-base-200">
-      <div className="hero-content text-center">
+      <div className="hero-content">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
