@@ -44,7 +44,6 @@ const ImageFile = ({ label, name }: { label: string; name: string }) => {
           name={name}
           ref={imageInput}
           onChange={handleImageExist}
-          required
         />
         <button className="btn" type="button" onClick={handleImagePick}>
           Pick an Image

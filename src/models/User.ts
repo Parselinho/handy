@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import Joi from "joi";
+// import { NotFoundError } from "@/lib/ErrorHandler";
+
 const { Schema } = mongoose;
 
 export interface IUser {
@@ -42,6 +44,14 @@ UserSchema.methods.comparePassword = async function (inputPassword: string) {
   return isMatch;
 };
 
+// UserSchema.statics.findByEmail = async function (email) {
+//   const user = await this.findOne({ email });
+//   if (!user) {
+//     throw new NotFoundError("User Not Found");
+//   }
+//   return user;
+// };
+
 export const User =
   mongoose.models.User || mongoose.model<IUser>("User", UserSchema);
 
@@ -53,7 +63,7 @@ export const userValidation = Joi.object({
   confirmPassword: Joi.valid(Joi.ref("password")).required().messages({
     "any.only": "password not match",
   }),
-});
+}).unknown();
 
 export const loginValidation = Joi.object({
   email: Joi.string().email().required(),

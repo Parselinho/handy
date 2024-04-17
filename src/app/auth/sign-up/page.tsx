@@ -5,7 +5,7 @@ import FormInput from "@/components/forms/FormInput";
 import SubmitBtn from "@/components/forms/SubmitBtn";
 import toast from "react-hot-toast";
 import { useFormState } from "react-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import ImageFile from "@/components/ImageFile";
 
@@ -17,14 +17,6 @@ const initialState = {
 
 const Page = () => {
   const [state, formAction] = useFormState(registerNewUser, initialState);
-  //   const [showForm, setShowForm] = useState(false);
-
-  //   useEffect(() => {
-  //     const timer = setTimeout(() => {
-  //       setShowForm(true);
-  //     }, 5000);
-  //     return () => clearTimeout(timer);
-  //   }, []);
 
   useEffect(() => {
     if (state.message) {
@@ -38,7 +30,6 @@ const Page = () => {
 
   return (
     <main>
-      {/* {showForm && ( */}
       <div
         className="hero min-h-screen"
         style={{
@@ -85,7 +76,7 @@ const Page = () => {
                 placeholder="Your Email Here"
                 required
               />
-              <ImageFile label="" name="" />
+              <ImageFile label="Upload Image" name="image" />
               <SubmitBtn text="Sign Up" />
               <p aria-live="polite" className="sr-only" role="status">
                 {state?.message}

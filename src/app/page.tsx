@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Hero from "@/components/hero/Hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Link href="auth/"> Auth </Link>
-      <Link href="auth/sign-up"> Sign Up </Link>
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Hero />
     </main>
   );
 }
