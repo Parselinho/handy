@@ -1,10 +1,16 @@
 import Link from "next/link";
-import Hero from "@/components/hero/Hero";
+import Hero from "@/components/home/Hero";
+import TasksMenu from "@/components/home/TasksMenu";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <>
       <Hero />
-    </main>
+      <TasksMenu />
+      <div>check</div>
+      <div>check</div>
+      <div>check</div>
+      <div>check</div>
+    </>
   );
 }

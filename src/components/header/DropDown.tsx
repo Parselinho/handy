@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "./NavLink";
 
 const DropDown = () => {
   return (
@@ -24,15 +25,13 @@ const DropDown = () => {
         className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li>
-          <Link href="/">Services (test)</Link>
+          <NavLink href="/" text="Services" />
         </li>
         <li>
-          <div className="row">
-            <Link href="/auth/sign-up">Sign up / Login</Link>
-          </div>
+          <NavLink href="/auth/sign-up" text="Sign up / Login" />
         </li>
         <li>
-          <Link href="/">Test</Link>
+          <NavLink href="/" text="test" />
         </li>
       </ul>
     </div>

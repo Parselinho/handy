@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Libre_Franklin } from "next/font/google";
 import "./globals.css";
 // import ToastProvider from "./(components)/Toastify";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/header/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const libre = Libre_Franklin({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className="h-screen">
+      <body className={libre.className}>
         <Header />
-        {children}
-        <Toaster />
+        <main>
+          {children}
+          <Toaster />
+        </main>
       </body>
     </html>
   );
