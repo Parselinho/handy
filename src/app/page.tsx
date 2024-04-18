@@ -7,10 +7,6 @@ export default function Home() {
     <>
       <Hero />
       <TasksMenu />
-      <div>check</div>
-      <div>check</div>
-      <div>check</div>
-      <div>check</div>
     </>
   );
 }
