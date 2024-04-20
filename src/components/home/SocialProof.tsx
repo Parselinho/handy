@@ -3,7 +3,10 @@ import Image from "next/image";
 const SocialProof = () => {
   return (
     <>
-      <div style={{ background: "linear-gradient(#FFF, 15%, #ECF7EF)" }}>
+      <div
+        className="p-5"
+        style={{ background: "linear-gradient(#FFF, 15%, #ECF7EF)" }}
+      >
         <div className="grid grid-cols-2 gap-4 m-4 mt-8">
           <div>
             <h6 className="text-green-950 font-bold">Furniture Assemblies:</h6>
@@ -32,8 +35,7 @@ const SocialProof = () => {
             <Image
               src="/ikea.jpg"
               alt="Ikea Logo"
-              width={500}
-              height={500}
+              layout="fill"
               className="absolute left-0 top-0  right-0 bottom-0"
               style={{
                 objectFit: "inherit",

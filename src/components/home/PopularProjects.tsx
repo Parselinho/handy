@@ -23,6 +23,20 @@ const PopularProjects = () => {
           href="/"
           alt="Test Photos"
         />
+        <ProjectItem
+          image="/love.jpeg"
+          cardTitle="Order Cooker"
+          cardText="Projects starting at $39"
+          href="/"
+          alt="Test Photos"
+        />
+        <ProjectItem
+          image="/love.jpeg"
+          cardTitle="Order Cooker"
+          cardText="Projects starting at $39"
+          href="/"
+          alt="Test Photos"
+        />
         <button
           type="button"
           className="font-semibold text-green-800 m-auto mt-5"
