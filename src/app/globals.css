@@ -7,8 +7,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-
+*
 /* loading page style : */
+* {
+  box-sizing: border-box;
+}
+
 .loading {
   text-align: center;
   animation: loading 1.2s ease-in-out infinite;
@@ -83,3 +87,29 @@
   object-fit: cover;
 }
 /* End Of Image Picker Component! */
+
+/* below logos, main page */
+
+.jobs-below-logos {
+  width: calc(100% - 50px);
+  /* margin-left: -16px; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 32px;
+  /* justify-content: space-evenly; */
+}
+
+.item-jobs-below-logos {
+  padding-left: 16px;
+  padding-top: 16px;
+  margin: 0.45rem;
+  font-size: 12px;
+  font-weight: 600;
+  height: 34px;
+  padding: 8px 16px;
+  border: 1px solid #545756;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+/* */
