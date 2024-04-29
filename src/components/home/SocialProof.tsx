@@ -33,13 +33,12 @@ const SocialProof = () => {
             style={{ minHeight: "86px", width: "130px" }}
           >
             <Image
-              src="/ikea.jpg"
+              src="/Ikea.jpg"
               alt="Ikea Logo"
-              layout="fill"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="absolute left-0 top-0  right-0 bottom-0"
               style={{
-                objectFit: "inherit",
-                objectPosition: "inherit",
                 color: "transparent",
               }}
             />

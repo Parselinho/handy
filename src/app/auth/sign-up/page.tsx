@@ -9,8 +9,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import ImageFile from "@/components/ImageFile";
 
-const debug = getDebugger("sign-up-form");
-
 const initialState = {
   message: null,
 };

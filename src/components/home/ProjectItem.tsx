@@ -34,9 +34,9 @@ const ProjectItem = ({
                 src={image}
                 alt={alt}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="absolute left-0 top-0 right-0 bottom-0"
                 style={{ color: "transparent" }}
-                objectFit="cover"
               />
             </div>
             <div className="flex flex-col gap-2 justify-center overflow-hidden pl-4 pr-4">

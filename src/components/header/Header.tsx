@@ -11,7 +11,21 @@ const Header = () => {
         </div>
         <div className="navbar-center">
           <Link href="/" className="btn btn-ghost text-xl">
-            <Image alt="logo" src="/logo.png" width={110} height={65} />
+            <Image
+              alt="logo"
+              src="/logo.png"
+              width="0"
+              height="0"
+              sizes="100vw"
+              className="w-full h-auto"
+            />
+            {/* <Image
+              alt="logo"
+              src="/logo.png"
+              width={110}
+              height={65}
+              style={{ width: "auto", height: "auto" }}
+            /> */}
           </Link>
         </div>
         <div className="navbar-end"></div>
