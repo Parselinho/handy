@@ -27,7 +27,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/models/User.js",
-    "src/lib/asyncHandler.js"
+    "src/lib/asyncHandler.js",
+    "middleware.js",
+    "src/app/api/auth/[...nextauth]/route.ts",
+    "src/app/api/auth/index.js",
+    "src/app/api/auth/[...nextauth].js"
   ],
   "exclude": ["node_modules"]
 }

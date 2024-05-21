@@ -1,4 +1,5 @@
 import { FaSearch } from "react-icons/fa";
+import ShowUser from "../user/showUser";
 
 const Hero = () => {
   return (
@@ -19,6 +20,7 @@ const Hero = () => {
           <FaSearch />
         </button>
       </div>
+      <ShowUser />
     </div>
   );
 };

@@ -5,13 +5,14 @@ import Joi from "joi";
 
 const { Schema } = mongoose;
 
-export interface IUser {
+export interface IUser extends Document {
   firstName: string;
   lastName: string;
   password: string;
   email: string;
   role: string;
   image: string;
+  comparePassword: (inputPassword: string) => Promise<boolean>;
 }
 
 const UserSchema = new Schema<IUser>({
@@ -35,22 +36,13 @@ const UserSchema = new Schema<IUser>({
 // hash password only when user creation or when updating password
 UserSchema.pre("save", async function () {
   if (!this.isModified("password")) return;
-  this.password = await bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 12);
 });
 
 // compare password
 UserSchema.methods.comparePassword = async function (inputPassword: string) {
-  const isMatch = await bcrypt.compare(inputPassword, this.password);
-  return isMatch;
+  return await bcrypt.compare(inputPassword, this.password);
 };
-
-// UserSchema.statics.findByEmail = async function (email) {
-//   const user = await this.findOne({ email });
-//   if (!user) {
-//     throw new NotFoundError("User Not Found");
-//   }
-//   return user;
-// };
 
 export const User =
   mongoose.models.User || mongoose.model<IUser>("User", UserSchema);

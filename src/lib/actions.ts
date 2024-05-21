@@ -16,6 +16,7 @@ export const registerNewUser = async (prevState: any, formData: FormData) => {
   }
   const buffer = Buffer.from(await image.arrayBuffer());
   const uploadedImage = await uploadFileToS3(buffer, image.name, image.type);
+
   const user = {
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
@@ -31,7 +32,8 @@ export const registerNewUser = async (prevState: any, formData: FormData) => {
     return data;
   } catch (error: any) {
     console.log(error.response.data.error);
-    // console.log(error.response.data.error);
     return { message: error.response.data.error };
   }
 };
+
+export const SignInUser = async (prevState: any, formData: FormData) => {};

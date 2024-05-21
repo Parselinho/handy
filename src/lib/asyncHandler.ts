@@ -1,7 +1,6 @@
 import { getDebugger } from "./debugger";
 import { NextRequest, NextResponse } from "next/server";
 
-const debug = getDebugger("async-error");
 type Handler = (
   req: NextRequest,
   res: NextResponse
