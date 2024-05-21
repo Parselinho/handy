@@ -1,5 +1,5 @@
 import { FaSearch } from "react-icons/fa";
-import ShowUser from "../user/showUser";
+import ShowUser from "../user/ShowUser";
 
 const Hero = () => {
   return (
